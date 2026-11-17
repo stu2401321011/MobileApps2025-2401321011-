@@ -1,4 +1,4 @@
-package com.example.bookbuddy
+package com.example.bookbuddy.database.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -39,5 +39,6 @@ data class Book(
     val status: String = "downloaded",
     val date:  Long = 0L, // Epoch days (or YYYYMMDD) representing day/month/year without time
     val favourite: Boolean = false,
-    val filepath: String
+    val filepath: String,
+    val imgpath: String
 )

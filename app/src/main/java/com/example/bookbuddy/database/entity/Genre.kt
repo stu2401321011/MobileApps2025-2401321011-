@@ -1,4 +1,4 @@
-package com.example.bookbuddy
+package com.example.bookbuddy.database.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -24,3 +24,4 @@ data class Genre(
     val mainId: Int = 0,  // 0 means this is main genre category
     val name: String
 )
+
