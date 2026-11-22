@@ -22,8 +22,7 @@ import androidx.room.Index
             onDelete = ForeignKey.SET_DEFAULT
         )
     ],
-    indices = [Index("author"),
-    Index("genre"), Index("date")]
+    indices = [Index("author"), Index("genre"), Index("date")]
 )
 
 data class Book(
@@ -36,9 +35,9 @@ data class Book(
     val genre: Int = -1,
     val rating: Double? = null,
     val review: String?,
-    val status: String = "downloaded",
-    val date:  Long = 0L, // Epoch days (or YYYYMMDD) representing day/month/year without time
+    @ColumnInfo(defaultValue = "downloaded")
+    val status: BookStatus = BookStatus.DOWNLOADED,
+    val date: Long = 0L, // Epoch days (or YYYYMMDD) representing day/month/year without time
     val favourite: Boolean = false,
-    val filepath: String,
     val imgpath: String
 )
